@@ -10,10 +10,18 @@ import UIKit
 
 class HangmanViewController: UIViewController {
 
+
+    @IBOutlet weak var guessesLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //guessesLabel.textAlignment = NSTextAlignment.Center
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
