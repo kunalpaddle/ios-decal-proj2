@@ -21,9 +21,12 @@
                                 <rect key="frame" x="20" y="20" width="75" height="30"/>
                                 <animations/>
                                 <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ujh-cf-DnD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1K8-Jn-ac4">
-                                <rect key="frame" x="252" y="417" width="91" height="53"/>
+                                <rect key="frame" x="251" y="449" width="91" height="53"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="Awi-DO-etR"/>
@@ -32,26 +35,58 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <state key="normal" title="Guess"/>
+                                <connections>
+                                    <action selector="guessButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UyU-dk-I5v"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IPI-He-vrz">
-                                <rect key="frame" x="252" y="379" width="97" height="30"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sof-Bz-v5z">
+                                <rect key="frame" x="155" y="403" width="284" height="52"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="GeR-Re-3AX"/>
-                                    <constraint firstAttribute="width" constant="97" id="sXF-b5-3J3"/>
+                                    <constraint firstAttribute="height" constant="52" id="P9x-4m-hQj"/>
+                                    <constraint firstAttribute="width" constant="284" id="bke-2X-Ov1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kjkj" translatesAutoresizingMaskIntoConstraints="NO" id="gKf-rC-MxN" userLabel="Hangman Image" colorLabel="IBBuiltInLabel-Orange">
-                                <rect key="frame" x="150" y="59" width="300" height="300"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6L-E4-jeQ">
+                                <rect key="frame" x="152" y="336" width="295" height="41"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="BSU-bD-QXn"/>
+                                    <constraint firstAttribute="width" constant="295" id="Zxa-8B-peD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                            Guesses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad1-HG-9v3">
+                                <rect key="frame" x="47" y="510" width="500" height="70"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration" label="yourGuesses">
+                                    <accessibilityTraits key="traits" updatesFrequently="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="282" id="Q87-Us-t72"/>
+                                    <constraint firstAttribute="height" constant="70" id="hpe-Qz-ULe"/>
+                                    <constraint firstAttribute="width" constant="500" id="tgu-EP-qUV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Q87-Us-t72"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKf-rC-MxN" userLabel="Hangman Image" colorLabel="IBBuiltInLabel-Orange">
+                                <rect key="frame" x="225" y="116" width="150" height="150"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration" label="">
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="18u-OF-uqB"/>
-                                    <constraint firstAttribute="width" constant="300" id="CKC-7j-Jic"/>
+                                    <constraint firstAttribute="height" constant="150" id="18u-OF-uqB"/>
+                                    <constraint firstAttribute="width" constant="150" id="CKC-7j-Jic"/>
                                 </constraints>
                                 <attributedString key="userComments">
                                     <fragment content="Image for Hangman Game">
@@ -62,65 +97,65 @@
                                     </fragment>
                                 </attributedString>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                            Guesses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ad1-HG-9v3">
-                                <rect key="frame" x="133" y="451" width="328" height="130"/>
-                                <animations/>
-                                <accessibility key="accessibilityConfiguration" label="yourGuesses">
-                                    <accessibilityTraits key="traits" updatesFrequently="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Q87-Us-t72"/>
-                                    <constraint firstAttribute="height" constant="130" id="hpe-Qz-ULe"/>
-                                    <constraint firstAttribute="width" constant="328" id="tgu-EP-qUV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gKf-rC-MxN" firstAttribute="leading" secondItem="WCj-vB-liz" secondAttribute="trailing" constant="15" id="0OS-Yk-b8P"/>
-                            <constraint firstItem="1K8-Jn-ac4" firstAttribute="centerX" secondItem="IPI-He-vrz" secondAttribute="centerX" id="0wt-xq-i4Z"/>
                             <constraint firstItem="gKf-rC-MxN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="2CW-mW-azq"/>
-                            <constraint firstItem="gKf-rC-MxN" firstAttribute="centerX" secondItem="IPI-He-vrz" secondAttribute="centerX" id="3L6-fs-WRI"/>
-                            <constraint firstItem="IPI-He-vrz" firstAttribute="top" secondItem="gKf-rC-MxN" secondAttribute="bottom" constant="20" id="5tg-N9-oa0"/>
+                            <constraint firstItem="sof-Bz-v5z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-3" id="2n7-EY-PTi"/>
                             <constraint firstItem="gKf-rC-MxN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9E1-A6-F0n"/>
+                            <constraint firstItem="Q6L-E4-jeQ" firstAttribute="centerX" secondItem="gKf-rC-MxN" secondAttribute="centerX" id="DRa-NY-0dC"/>
+                            <constraint firstItem="ad1-HG-9v3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="90" id="DyU-Vq-JAw"/>
                             <constraint firstItem="gKf-rC-MxN" firstAttribute="top" secondItem="WCj-vB-liz" secondAttribute="bottom" constant="5" id="Ggp-im-SuF"/>
                             <constraint firstItem="ad1-HG-9v3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-26" id="NUu-82-1lY"/>
                             <constraint firstItem="WCj-vB-liz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="T9d-JK-OFw"/>
-                            <constraint firstItem="1K8-Jn-ac4" firstAttribute="centerX" secondItem="IPI-He-vrz" secondAttribute="centerX" constant="-3" id="U5R-Ul-3w5"/>
+                            <constraint firstItem="1K8-Jn-ac4" firstAttribute="top" secondItem="sof-Bz-v5z" secondAttribute="bottom" constant="-6" id="Tau-7c-obi"/>
+                            <constraint firstItem="Q6L-E4-jeQ" firstAttribute="top" secondItem="gKf-rC-MxN" secondAttribute="bottom" constant="70" id="ZKt-AH-XTd"/>
                             <constraint firstItem="ad1-HG-9v3" firstAttribute="top" secondItem="gKf-rC-MxN" secondAttribute="bottom" constant="62" id="aH2-NA-x0j"/>
-                            <constraint firstItem="ad1-HG-9v3" firstAttribute="top" secondItem="1K8-Jn-ac4" secondAttribute="bottom" constant="-19" id="c7b-ik-RPn"/>
+                            <constraint firstItem="ad1-HG-9v3" firstAttribute="top" secondItem="1K8-Jn-ac4" secondAttribute="bottom" constant="8" id="c7b-ik-RPn"/>
                             <constraint firstItem="ad1-HG-9v3" firstAttribute="centerX" secondItem="1K8-Jn-ac4" secondAttribute="centerX" constant="12.5" id="cer-uT-Xe2"/>
                             <constraint firstItem="1K8-Jn-ac4" firstAttribute="top" secondItem="gKf-rC-MxN" secondAttribute="bottom" constant="29" id="fta-Yw-lp5"/>
-                            <constraint firstItem="gKf-rC-MxN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="koW-ni-Viz"/>
-                            <constraint firstItem="ad1-HG-9v3" firstAttribute="centerX" secondItem="1K8-Jn-ac4" secondAttribute="centerX" id="nNm-pl-OLz"/>
-                            <constraint firstItem="IPI-He-vrz" firstAttribute="centerX" secondItem="gKf-rC-MxN" secondAttribute="centerX" id="pHo-Ls-QKM"/>
+                            <constraint firstItem="ad1-HG-9v3" firstAttribute="centerX" secondItem="sof-Bz-v5z" secondAttribute="centerX" id="irP-ZO-dqu"/>
+                            <constraint firstItem="gKf-rC-MxN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="70" id="koW-ni-Viz"/>
+                            <constraint firstItem="ad1-HG-9v3" firstAttribute="centerX" secondItem="1K8-Jn-ac4" secondAttribute="centerX" constant="5" id="nNm-pl-OLz"/>
+                            <constraint firstItem="sof-Bz-v5z" firstAttribute="top" secondItem="gKf-rC-MxN" secondAttribute="bottom" constant="-7" id="ocM-sI-c0X"/>
+                            <constraint firstItem="sof-Bz-v5z" firstAttribute="top" secondItem="Q6L-E4-jeQ" secondAttribute="bottom" constant="26" id="q4N-6Z-8Sz"/>
+                            <constraint firstItem="Q6L-E4-jeQ" firstAttribute="top" secondItem="gKf-rC-MxN" secondAttribute="bottom" constant="8" id="rAb-Be-76B"/>
                             <constraint firstItem="WCj-vB-liz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rv5-hn-mCd"/>
                             <constraint firstItem="gKf-rC-MxN" firstAttribute="leading" secondItem="WCj-vB-liz" secondAttribute="trailing" constant="15" id="ty9-RU-bY0"/>
-                            <constraint firstItem="1K8-Jn-ac4" firstAttribute="top" secondItem="IPI-He-vrz" secondAttribute="bottom" constant="8" id="uct-el-BSO"/>
+                            <constraint firstItem="1K8-Jn-ac4" firstAttribute="centerX" secondItem="sof-Bz-v5z" secondAttribute="centerX" id="v8D-Py-hMY"/>
                             <constraint firstItem="gKf-rC-MxN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wrE-T3-bgw"/>
+                            <constraint firstItem="ad1-HG-9v3" firstAttribute="top" secondItem="sof-Bz-v5z" secondAttribute="bottom" constant="55" id="yHy-e0-5yf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ad1-HG-9v3" secondAttribute="bottom" constant="20" id="zr2-dp-eLn"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="0OS-Yk-b8P"/>
                                 <exclude reference="2CW-mW-azq"/>
-                                <exclude reference="3L6-fs-WRI"/>
                                 <exclude reference="9E1-A6-F0n"/>
                                 <exclude reference="Ggp-im-SuF"/>
+                                <exclude reference="koW-ni-Viz"/>
                                 <exclude reference="ty9-RU-bY0"/>
+                                <exclude reference="rAb-Be-76B"/>
+                                <exclude reference="ocM-sI-c0X"/>
+                                <exclude reference="DyU-Vq-JAw"/>
                                 <exclude reference="NUu-82-1lY"/>
                                 <exclude reference="aH2-NA-x0j"/>
+                                <exclude reference="c7b-ik-RPn"/>
                                 <exclude reference="cer-uT-Xe2"/>
-                                <exclude reference="0wt-xq-i4Z"/>
+                                <exclude reference="nNm-pl-OLz"/>
                                 <exclude reference="fta-Yw-lp5"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="guessButton" destination="1K8-Jn-ac4" id="Uqy-EG-v5c"/>
                         <outlet property="guessesLabel" destination="ad1-HG-9v3" id="9V5-Nm-HTO"/>
+                        <outlet property="hangManImage" destination="gKf-rC-MxN" id="ShF-Wi-EKd"/>
+                        <outlet property="newGameButton" destination="WCj-vB-liz" id="Ybo-j7-2zv"/>
+                        <outlet property="picker" destination="sof-Bz-v5z" id="l5b-D2-Tzm"/>
+                        <outlet property="progressLabel" destination="Q6L-E4-jeQ" id="wU4-8Z-emg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -128,7 +163,4 @@
             <point key="canvasLocation" x="273" y="337"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="kjkj" width="16" height="16"/>
-    </resources>
 </document>
